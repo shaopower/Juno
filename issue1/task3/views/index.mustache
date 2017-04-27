@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{title}}</title>
+        <style>
+            .wrapper {
+                flex: 1;
+                flex-direction: row;
+                display: flex;
+            }
+        </style>
+    </head>
+<body>
+    <div class="wrapper">
+        <div id="test1">
+            {{#result}}
+            <div>
+                <ul>
+                    {{#news}}
+                    <li>
+                        <a href="{{targetUrl}}" title="{{text2}}">
+                            <img src="{{imgUrl}}" alt="{{text2}}">
+                        </a>
+                        <p>{{text3}}</p>
+                    </li>
+                    {{/news}}
+                </ul>
+            </div>
+            {{/result}}
+        </div>
+        <div id="test2">
+            {{#value.blockitem}}
+            <div>
+                <a href="{{link}}" title="{{text}}">
+                    <img src="{{img}}" alt="{{text}}">
+                </a>
+                <p>{{text}}</p>
+            </div>
+            {{/value.blockitem}}
+        </div>
+    </div>
+    <script>
+        {{{script}}}
+    </script>
+    </body>
+</html>
