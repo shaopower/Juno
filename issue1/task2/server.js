@@ -11,7 +11,7 @@ exports.task2 = function (request, response) {
           <meta charset="utf-8">
           <title>demo</title>
           <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
-          <link rel="stylesheet" href="http://139.196.170.203/juno/css/style.css"/>
+          <link rel="stylesheet" href="http://139.196.170.203/juno/static/css/style.css"/>
       </head>
       <body>
           <h1>chunk html</h1>
@@ -45,7 +45,7 @@ exports.task2 = function (request, response) {
           `;
 
   const chunk2 = `<p>chunk2</p>
-              <script src="http://139.196.170.203/juno/js/5s.js" ${defer} ${async} ></script>
+              <script src="http://139.196.170.203/juno/static/js/5s.js" ${defer} ${async} ></script>
               <script src="http://139.196.170.203:8000/sleep.php" ${defer} ${async}></script>
             </body>
             </html>`;

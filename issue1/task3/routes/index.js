@@ -81,7 +81,7 @@ router.get('/test', async function(ctx, next) {
       title: 'demo',
       result: r1.result,
       value: r2.value,
-      script: "console.log('chunked end');"
+      script: "console.log('not chunked end');"
     });
   });
 });

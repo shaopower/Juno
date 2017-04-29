@@ -4,9 +4,9 @@ const through = require('through');
 
 /*
  * koa2 在 middleware 全部处理完后才触发 handleResponse => respond(ctx)
- * koa 默认 respond 首次 pipe Stream => response，导致 middleware 中 Stream write 无效
+ * respond 首次 pipe Stream => response，导致 middleware 中 Stream write 无效
  * pipe(ctx.res)，保证 chunked 数据提前 resp
- * ctx.respond = false， 取消 koa 默认 respond
+ * ctx.respond = false， 取消 koa2 默认 respond
  */
 function chunked() {
   return async (ctx, next) => {

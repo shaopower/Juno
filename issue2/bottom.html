@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="http://139.196.170.203/juno/static/css/style.css"/>
+</head>
+<body>
+    <h1>bottom script</h1>
+    <p>dom ready</p>
+    <div id="J_DomReady">show</div>
+    <p>load finish</p>
+    <div id="J_LoadFinish">show</div>
+    <p>log</p>
+    <div id="J_DomLog"></div>
+
+    <script>
+        var timesnipe = performance.now();
+        var logDiv = document.querySelector('#J_DomLog');
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('J_DomReady').innerHTML = performance.now() - timesnipe;
+        }, false);
+
+        window.addEventListener('load', function() {
+            document.getElementById('J_LoadFinish').innerHTML = performance.now() - timesnipe;
+        }, false);
+
+        console.log = function(txt){
+            var df = document.createDocumentFragment();
+            var p = document.createElement('p');
+            p.appendChild(document.createTextNode(`${performance.now() - timesnipe} ${txt}`));
+            df.appendChild(p);
+            logDiv.appendChild(df);
+        }
+    </script>
+
+    <script src="http://139.196.170.203/juno/static/js/5s.js"></script>
+    <script src="http://139.196.170.203:8000/sleep.php"></script>
+
+    <p>end</p>
+</body>
+</html>
