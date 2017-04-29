@@ -1,5 +1,5 @@
 # juno
-about learn web  
+learn about web  
 
 学习以 Issue 的形式进行  
 
